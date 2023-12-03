@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Search Pokemon
+  body
+    h1 Search for a Pokemon
+    form(id="searchForm" method="POST")
+      label(for="pokemon") Enter Pokemon Name/ID:
+      input(type="text" id="pokemon" name="pokemon" required)
+      button(type="button" onclick="submitForm('/ps4/pokemon-promise')") Promise
+      button(type="button" onclick="submitForm('/ps4/pokemon-async')") Async/Await
+      button(type="button" onclick="submitForm('/ps4/pokemon-callback')") Callback
+
+    script.
+      function submitForm(actionUrl) {
+        var form = document.getElementById('searchForm');
+        form.action = actionUrl;
+        form.submit();
+      }

@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Pokemon Details
+  body
+    h1 Pokemon Details
+    if pokemon
+      h2= "Name: " + pokemon.name
+      h3= "ID: " + pokemon.id
+      h4 Abilities
+      ul
+        each ability in pokemon.abilities
+          li= ability.ability.name
+    else
+      p No data available

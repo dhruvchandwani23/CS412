@@ -1,0 +1,12 @@
+<div>
+  <h1>{{ title }}</h1>
+  <button (click)="fetchData()">Fetch Data</button>
+  <div *ngIf="showData">
+    <p>ID: {{ data.id }}</p>
+    <p>Name: {{ data.name }}</p>
+    <p>Abilities:</p>
+    <ul>
+      <li *ngFor="let ability of data.abilities">{{ ability.ability.name }}</li>
+    </ul>
+  </div>
+</div>

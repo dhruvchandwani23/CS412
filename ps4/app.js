@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const ps4Router = require('./routes/ps4'); 
 
+app.use(express.static('public'));
+
 // Set Pug as the view engine
 app.set('view engine', 'pug');
 app.set('views', './views');
@@ -11,12 +13,11 @@ app.set('views', './views');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 // Mounting the PS4 router
 app.use('/ps4', ps4Router);
 
 // Route to display the search form
-app.get('/search-pokemon', (req, res) => {
+app.get('/', (req, res) => {
     res.render('searchForm');
 });
 
